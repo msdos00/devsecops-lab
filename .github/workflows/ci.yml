@@ -27,3 +27,8 @@ jobs:
       - name: Test Python application
         run: |
           python -m py_compile app/app.py
+
+      - name: Run Semgrep SAST
+        uses: semgrep/semgrep-action@v1
+        with:
+          config: p/python
