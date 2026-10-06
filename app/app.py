@@ -1,10 +1,12 @@
-from flask import Flask
+import subprocess
 
-app = Flask(__name__)
-
-@app.route("/")
-def hello():
-    return "Hello DevSecOps!"
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+@app.route("/ping")
+def ping():
+    user_input = "example"
+    result = subprocess.run(
+        user_input,
+        shell=True,
+        capture_output=True,
+        text=True
+    )
+    return result.stdout
