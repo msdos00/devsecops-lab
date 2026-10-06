@@ -1,0 +1,8 @@
+rules:
+  - id: python-subprocess-shell-true
+    languages:
+      - python
+    message: "Dangerous use of subprocess with shell=True"
+    severity: ERROR
+    patterns:
+      - pattern: subprocess.run(..., shell=True, ...)

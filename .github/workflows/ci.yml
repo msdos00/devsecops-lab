@@ -31,4 +31,4 @@ jobs:
       - name: Run Semgrep SAST
         uses: semgrep/semgrep-action@v1
         with:
-          config: p/python
+          config: .semgrep.yml
